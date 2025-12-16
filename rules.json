@@ -1,0 +1,63 @@
+{
+    "BLOCKED_IPS": [
+        "192.168.1.100", 
+        "10.0.0.5", 
+        "172.16.0.1"
+    ],
+    "BLOCKED_PORTS": [
+        21, 
+        22, 
+        23, 
+        3389,
+        8080 
+    ],
+    "BLOCKED_KEYWORDS": [
+        "torrent", 
+        "virus", 
+        "evil_cmd",
+        "gambling",
+        "malware_url"
+    ],
+    "GEOGRAPHIC_BLOCKS": [
+        "40.", 
+        "103.102."
+    ],
+    "MAX_TTL": 5,
+    
+    "SYN_RATE_LIMIT": 5, 
+    "MAX_DNS_SIZE": 512,
+    
+    "LOW_REPUTATION_IPS": [
+        "1.2.3.4", 
+        "104.149.232.128"
+    ],
+    "HIGH_REPUTATION_IPS": [
+        "8.8.8.8", 
+        "1.1.1.1"
+    ],
+    
+    "PORT_SCAN_LIMIT": 10,
+    "SCAN_WINDOW_SEC": 5,
+    
+    "GLOBAL_RATE_LIMIT": 50,
+    "RATE_LIMIT_WINDOW_SEC": 1,
+    
+    "TEMP_BLOCK_DURATION_SEC": 60,
+    
+    "TIME_BASED_RULES": {
+        "restrict_smtp_hours": {
+            "days": [0, 1, 2, 3, 4], 
+            "start_time": "18:00",
+            "end_time": "09:00",
+            "port": 25,
+            "action": "DROP"
+        },
+        "block_gaming_weekend": {
+            "days": [5, 6], 
+            "start_time": "00:00",
+            "end_time": "23:59",
+            "port": 3074, 
+            "action": "DROP"
+        }
+    }
+}
